@@ -1,0 +1,1 @@
+This number is : {{ $number['a'] }}
