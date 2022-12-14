@@ -22,6 +22,12 @@ Route::get('/amar', function () {
     return view('amar');
 });
 
+Route::get('/facade-test', function () {
+    Hunter::test();
+   // Hunter::testone();
+    
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
