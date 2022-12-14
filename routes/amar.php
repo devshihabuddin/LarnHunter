@@ -15,12 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+   // dd(app());
     return view('welcome');
 });
 
 Route::get('/amar', function () {
     return view('amar');
 });
+
+Route::get('/country', function(){
+    return view('country');
+})->middleware('country');
 
 Route::get('/facade-test', function () {
     Hunter::test();
