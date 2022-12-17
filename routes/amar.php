@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\ClassController;
+use App\Http\Controllers\Admin\StudensController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +24,49 @@ Route::get('/', function () {
 Route::get('/amar', function () {
     return view('amar');
 });
+
+
+
+//__classes routes__//
+
+Route::get('class/index', [ClassController::class, 'index'])->name('class.index');
+Route::get('class/create', [ClassController::class, 'create'])->name('class.create');
+Route::post('class/store', [ClassController::class, 'store'])->name('class.store');
+Route::get('class/edit/{id}', [ClassController::class, 'edit'])->name('class.edit');
+Route::put('class/update/{id}', [ClassController::class, 'update'])->name('class.update');
+Route::any('class/destroy/{id}', [ClassController::class, 'destroy'])->name('class.destroy');
+
+//__Students Resource route Controller__//
+Route::resource('students', StudensController::class);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/country', function(){
     return view('country');
