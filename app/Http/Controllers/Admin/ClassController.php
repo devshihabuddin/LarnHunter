@@ -14,7 +14,7 @@ class ClassController extends Controller
     public function index()
     {
         
-       $classes=DB::table('classes')->get();
+       $classes=DB::table('classes')->paginate(4);
       // dd($classes);
        return view('Class.index',compact('classes'));
     }
@@ -26,11 +26,14 @@ class ClassController extends Controller
     }
 
     public function store(Request $request){
-        $classes = $request->all();
-       // dd($classes);
-       //$data= DB::table('classes')->insert($classes);
-       $data = Classe::create($classes);
-       //dd($data);
+       // $classes = $request->all();
+            $status = array(
+                'class_name' => $request->class_name
+            );
+        //dd($status);
+       $data= DB::table('classes')->insert($status);
+       //$data = Classe::create($classes);
+       
         return redirect()->route('class.index');
     }
 

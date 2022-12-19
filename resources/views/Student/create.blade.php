@@ -17,7 +17,7 @@
             <label for="exampleFormControlInput1" class="form-label">Class Name:</label>
             <select class="form-label" name="class_id">
                 @foreach($classes as $class)
-                    <option value="{{$class->id}}">{{$class->name}}</option>
+                    <option value="{{$class->id}}">{{$class->class_name}}</option>
                 @endforeach
             </select>
         </div>

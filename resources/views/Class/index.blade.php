@@ -24,7 +24,7 @@
    @foreach($classes as $key=>$class)
    <tr>
       <td scope="col">{{++$key}}</td>
-      <td scope="col">{{$class->name}}</td>
+      <td scope="col">{{$class->class_name}}</td>
       <td>
         <a class="btn btn-info" href="{{route('class.edit',$class->id)}}">Edit</a>
          <a class="btn btn-danget" href="{{route('class.destroy',$class->id)}}">Delete</a>
@@ -39,4 +39,5 @@
   </tbody>
 </table>
 </body>
+{{$classes->links()}}
 </html>

@@ -15,7 +15,8 @@ class StudensController extends Controller
      */
     public function index()
     {
-        $students = DB::table('students')->get();
+        $students = DB::table('students')->join('classes','students.class_id','classes.id')->get();
+       // dd($students);
         return view('Student.index',compact('students'));
     }
 
@@ -39,11 +40,11 @@ class StudensController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
-        $validated = $request->validate([
-            'name' => 'required',
-            'class_id' => 'required',
-            'phone' => 'required',
-            'email' => 'required|email'
+        $validated      =$request->validate([
+            'name'      => 'required',
+            'class_id'  => 'required',
+            'phone'     => 'required',
+            'email'     => 'required|email'
         ]);
 
         $data = array(

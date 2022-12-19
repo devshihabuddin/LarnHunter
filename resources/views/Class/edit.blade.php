@@ -16,7 +16,7 @@
             @csrf()
             @method('PUT')
             <label for="">Class Name</label><br>
-            <input type="text" name="name" placeholder="Enter your class name" value="{{$data->name}}">
+            <input type="text" name="class_name" placeholder="Enter your class name" value="{{$data->class_name}}">
             <button type="submit">submit</button>
         </form>
     </div>

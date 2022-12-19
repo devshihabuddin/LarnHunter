@@ -18,7 +18,7 @@
             <label for="exampleFormControlInput1" class="form-label">Class Name:</label>
             <select class="form-label" name="class_id">
                 @foreach($classes as $class)
-                    <option value="{{$class->id}}" @if($class->id == $student->class_id) selected @endif >{{$class->name}}</option>
+                    <option value="{{$class->id}}" @if($class->id == $student->class_id) selected @endif >{{$class->class_name}}</option>
                 @endforeach
             </select>
         </div>

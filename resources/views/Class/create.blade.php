@@ -15,7 +15,7 @@
         <form action="{{route('class.store')}}" method="POST">
             @csrf()
             <label for="">Class Name</label><br>
-            <input type="text" name="name" placeholder="Enter your class name">
+            <input type="text" name="class_name" placeholder="Enter your class name">
             <button type="submit">submit</button>
         </form>
     </div>
